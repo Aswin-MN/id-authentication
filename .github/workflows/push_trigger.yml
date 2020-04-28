@@ -48,7 +48,7 @@ jobs:
     - name: Publish the maven package
       run: |
         cd authentication
-        mvn deploy -DskipTests -s $GITHUB_WORKSPACE/settings.xml
+        mvn deploy -DskipTests -Dgpg.skip -s $GITHUB_WORKSPACE/settings.xml
       env:
         GPG_TTY: $(tty)
     - name: Ready the springboot artifacts
